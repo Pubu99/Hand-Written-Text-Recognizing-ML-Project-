@@ -35,17 +35,27 @@ const UploadImage = () => {
 
   return (
     <div className="upload-container">
-      <input type="file" onChange={handleFileChange} accept="image/*" />
-      {imagePreview && <img src={imagePreview} alt="Uploaded Preview" style={{ maxWidth: '300px', marginTop: '20px' }} />}
-      <button onClick={handleSubmit} disabled={!selectedFile}>Show Results</button>
+      <input type="file" onChange={handleFileChange} accept="image/*" className="file-input" />
+      
+      {imagePreview && (
+        <div className="image-preview">
+          <img src={imagePreview} alt="Uploaded Preview" className="preview-image" />
+        </div>
+      )}
+      
+      <button onClick={handleSubmit} disabled={!selectedFile} className="submit-button">
+        Show Results
+      </button>
+      
       {result && (
-        <div className="result">
-          <h3>Detected Text:</h3>
-          <p>{result}</p>
+        <div className="result-container">
+          <h3 className="result-title">Detected Text:</h3>
+          <p className="result-text">{result}</p>
         </div>
       )}
     </div>
   );
+  
 };
 
 export default UploadImage;
