@@ -21,7 +21,7 @@ const UploadImage = () => {
     formData.append('file', selectedFile);
 
     try {
-      const response = await axios.post("https://9445-35-201-130-77.ngrok-free.app/predict", formData, {
+      const response = await axios.post("https://9dbf-34-16-172-81.ngrok-free.app/predict", formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
