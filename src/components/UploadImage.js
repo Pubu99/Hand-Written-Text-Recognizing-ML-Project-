@@ -21,7 +21,7 @@ const UploadImage = () => {
     formData.append('file', selectedFile);
 
     try {
-      const response = await axios.post("https://9dbf-34-16-172-81.ngrok-free.app/predict", formData, {
+      const response = await axios.post("https://1c63-35-204-43-183.ngrok-free.app/predict", formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -35,7 +35,8 @@ const UploadImage = () => {
 
   return (
     <div className="upload-container">
-      <input type="file" onChange={handleFileChange} accept="image/*" className="file-input" />
+      <label htmlFor="file-input" className="upload-button">Choose File</label>
+      <input type="file" id="file-input" onChange={handleFileChange} accept="image/*" className="file-input" />
       
       {imagePreview && (
         <div className="image-preview">
@@ -55,7 +56,6 @@ const UploadImage = () => {
       )}
     </div>
   );
-  
 };
 
 export default UploadImage;
